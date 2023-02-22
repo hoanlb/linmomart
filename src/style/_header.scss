@@ -6,6 +6,14 @@
 .catenav {
   position: relative;
   margin-right: 20px;
+  .catenav_title {
+    background-color: #e1e1e1;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    line-height: 36px;
+  }
   .catenav_btn {
     width: 36px;
     height: 30px;
@@ -23,21 +31,23 @@
       }
     }
   }
-  .catenav_title {
-    background-color: #e1e1e1;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333333;
+  .catenav_close_btn {
+    cursor: pointer;
+    font-size: 36px;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
-    line-height: 36px;
+    display: none;
   }
   .catenav_list {
     background-color: $blue;
     display: none;
     z-index: 1;
     position: absolute;
-    top: 30px;
-    left: 0;
+    top: 43px;
+    left: -20px;
     width: 300px;
     .catenav_listitem {
       font-size: 14px;
@@ -56,8 +66,17 @@
         }
       }
     }
+    @media (max-width: 480px) {
+      top: 83px;
+    }
   }
-  &:hover {
+  &.show {
+    .catenav_btn {
+      display: none;
+    }
+    .catenav_close_btn {
+      display: block;
+    }
     .catenav_list {
       display: block;
     }
